@@ -30,7 +30,7 @@ var svg = d3.select("body").append("svg")
 
 d3.csv("stackedBarChart.csv", function(error, data) {
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "State"; }));
-
+  
   data.forEach(function(d) {
     var y0 = 0;
     d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
