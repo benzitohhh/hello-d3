@@ -37,8 +37,8 @@ cluster.forEach(function(pId, i) {
 });
 
 // TEMP: inject some fake data
-var tStart = 1990;
-var tEnd = 2003;
+var tStart = 1995;
+var tEnd = 2001;
 freqs = {};
 d3.range(tStart, tEnd + 1).forEach(function(d){
   freqs[d] = {};
@@ -118,7 +118,7 @@ var year = svg.selectAll(".year")
     .attr("class", "g")
     .attr("transform", function(d) { return "translate(" + x(d.year) + ",0)"; });
 
-year.selectAll("rect")
+var insideYear = year.selectAll("rect")
     .data(function(d) { return d.freqs; }) // bind data (inherits from parent)
   .enter().append("rect")
     .attr("width", x.rangeBand())

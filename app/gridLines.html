@@ -1,0 +1,40 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <title>stackedBarChart</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+        <style>
+            body {
+                font: 10px sans-serif;
+            }
+            .axis path, .axis line {
+                fill: none;
+                stroke: #000;
+                shape-rendering: crispEdges;
+            }
+            .line {
+                fill: none;
+                stroke: steelblue;
+                stroke-width: 1.5px;
+            }
+            .line.second {
+                stroke: red;
+            }
+            .area {
+                fill: none;
+                opacity: 0.5;
+            }
+            .dot {
+                fill: none;
+                stroke: steelblue;
+                stroke-width: 1.5px;
+            }
+        </style>
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script type="text/javascript" src="bower_components/d3/d3.js"></script>
+        <script src="gridLines.js"></script>
+</body>
+</html>
