@@ -117,7 +117,7 @@ d3.csv("reusable.csv", function(data) {
                                             // BEN: example input: "Feb 2003"
                                             // BEN: d3 parses this to a Date object
 
-  // d3.select("#example")
+  // d3.select("#example1")
   //     .datum(data)
   //   .call(timeSeriesChart()
   //     .x(function(d) { return formatDate.parse(d.date); })
@@ -128,19 +128,23 @@ d3.csv("reusable.csv", function(data) {
                 .x(function(d) { return formatDate.parse(d.date); }) // set x-accessor
                 .y(function(d) { return +d.price; });                // set y-accessor
 
-  d3.select("#example2")
+  d3.select("#example1")
       .datum(data)  // bind data to selection
       .call(chart); // calls our chart, passing in selection
   
-  // d3.select("#example3")
-  //     .datum(data)
-  //     .call(chart);
+  d3.select("#example2")
+      .datum(data)
+      .call(chart);
   
-  // TODO: check the example!!!
   // http://stackoverflow.com/questions/14665786/some-clarification-on-reusable-charts
-  // setInterval(function() { 
-    
-  // }, 5000);
+  setInterval(function() {
+    // fake some new data
+    data = data.map(function(d) { return {date: d.date, price: +d.price + 250 * (-0.5 + Math.random()) };});
+    // Update
+    d3.select("#example2")
+      .datum(data)
+      .call(chart);
+  }, 100);
 
 });
 
